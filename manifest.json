@@ -1,0 +1,21 @@
+{
+  "manifest_version":2,
+  "name":"jandan_vote",
+  "version":"1.0",
+  "description": "根据投票比选择性显示无聊图图片",
+  "browser_action":{
+     "default_title":"jandan"
+  },
+  "options_page":"options.html",
+  "background": {
+    "scripts": ["eventHandler.js"],
+    "persistent": false
+  },
+  "content_scripts":[
+  {
+    "matches":["http://jandan.net/pic/*"],
+    "js": ["content.js"],
+    "run_at":"document_start"
+  }
+  ]
+}
